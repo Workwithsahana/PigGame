@@ -1,6 +1,6 @@
 import random
 
-
+#random generation of number between 1-6
 def roll():
     min_value = 1
     max_value = 6
@@ -8,7 +8,7 @@ def roll():
 
     return roll
 
-
+#number of players
 while True:
     players = input("Enter the number of players (2 - 4): ")
     if players.isdigit():
@@ -20,9 +20,9 @@ while True:
     else:
         print("Invalid, try again.")
 
-max_score =15
+max_score =15 #max score 
 player_scores = [0 for _ in range(players)]
-
+#main logic
 while max(player_scores) < max_score:
     for player_idx in range(players):
         print("\nPlayer number", player_idx + 1, "turn has just started!")
@@ -47,7 +47,7 @@ while max(player_scores) < max_score:
 
         player_scores[player_idx] += current_score
         print("Your total score is:", player_scores[player_idx])
-
+#who is the winner
 max_score = max(player_scores)
 winning_idx = player_scores.index(max_score)
 print("Player number", winning_idx + 1,
